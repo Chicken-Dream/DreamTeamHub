@@ -40,7 +40,7 @@ window.PROJECTS = [
   {
     title: "Flappy Duel",
     description: "1v1 flappy bird",
-    url: "https://flappy-duel.dreamtemp.workers.dev/",
+    subdomain: "flappyduel",
     image: "images/projects/flappyduel.png",
     author: "Jordan",
   },
