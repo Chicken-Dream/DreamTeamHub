@@ -152,7 +152,8 @@ main {
 .card:hover,
 .card:focus-visible {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+  /* 5px ring drawn as a shadow so it doesn't change the card's size or shift the grid. */
+  box-shadow: 0 0 0 5px rgba(132, 204, 22, 0.5), var(--shadow-hover);
 }
 
 .card:focus-visible {
