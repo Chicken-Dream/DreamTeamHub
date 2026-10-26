@@ -44,4 +44,11 @@ window.PROJECTS = [
     image: "images/projects/flappyduel.png",
     author: "Jordan",
   },
+  {
+    title: "Mahjong Mania",
+    description: "experience the thrill of drawing the tile you just discarded",
+    subdomain: "mahjongmania",
+    image: "images/projects/mahjong.png",
+    author: "Jordan",
+  },
 ];
