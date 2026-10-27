@@ -51,4 +51,10 @@ window.PROJECTS = [
     image: "images/projects/mahjong.png",
     author: "Jordan",
   },
+  {
+    title: "Blob Soccer",
+    description: "messi vs ronaldo",
+    subdomain: "blobsoccer",
+    image: "images/projects/blobsoccer.png",
+  },
 ];
