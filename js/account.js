@@ -44,8 +44,15 @@
     var panel = el("div", "account__panel");
     panel.hidden = true;
     panel.appendChild(el("p", "account__label", "Signed in as"));
-    var current = el("p", "account__current", user.name);
-    panel.appendChild(current);
+    // Hover (or tap/focus) shows the account number, same as on the leaderboard: its place in
+    // sign-up order, so #0 is the first account ever (account ids start at 1).
+    var tip = "Player #" + (user.id - 1);
+    var current = el("span", "tip", user.name);
+    current.tabIndex = 0;
+    current.setAttribute("data-tip", tip);
+    var currentRow = el("p", "account__current");
+    currentRow.append(current, el("span", "visually-hidden", " (" + tip + ")"));
+    panel.appendChild(currentRow);
 
     // Rename: names are a prefix + a suffix from fixed lists, like in the plaza.
     var rename = el("form", "account__rename");
