@@ -39,6 +39,14 @@
     <section id="project-grid" class="grid" aria-label="Projects">
       <noscript><p class="empty">Please enable JavaScript to view the projects.</p></noscript>
     </section>
+
+    <!-- Tabs and table filled in by js/leaderboard.js. -->
+    <section class="leaderboard" aria-labelledby="leaderboard-title">
+      <h2 id="leaderboard-title" class="leaderboard__title">Leaderboard</h2>
+      <div id="leaderboard-tabs" class="leaderboard__tabs" role="tablist" aria-label="Game"></div>
+      <div id="leaderboard-panel" class="leaderboard__panel" role="tabpanel"></div>
+      <p class="leaderboard__note">Only matches between two signed-in players count.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -48,5 +56,6 @@
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
   <script src="js/account.js"></script>
+  <script src="js/leaderboard.js"></script>
 </body>
 </html>
