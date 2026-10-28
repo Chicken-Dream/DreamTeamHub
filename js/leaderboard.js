@@ -1,5 +1,5 @@
 /*
- * Leaderboards on the home page, one tab per game.
+ * Leaderboards on leaderboard.html, one tab per game.
  *
  * Results come from the account service (account.dreamteamhub.ca), which game servers report to
  * when a match between two signed-in players ends. To add a game, add a tab here and the same

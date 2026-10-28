@@ -53,6 +53,15 @@ main {
   padding: 56px 16px 32px;
 }
 
+/* ---------- Site nav (top left) ---------- */
+
+.site-nav {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+}
+
 /* ---------- Account (sign-in, top right) ---------- */
 
 .account {
@@ -63,6 +72,8 @@ main {
   text-align: left;
 }
 
+/* Pill buttons in the header corners: "Leaderboard" / "Games" on the left, the account on the right. */
+.pill-link,
 .account__signin,
 .account__name {
   display: inline-block;
@@ -79,12 +90,14 @@ main {
   transition: box-shadow 0.2s ease;
 }
 
+.pill-link:hover,
 .account__signin:hover,
 .account__name:hover,
 .account__name[aria-expanded="true"] {
   box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.5), var(--shadow);
 }
 
+.pill-link:focus-visible,
 .account__signin:focus-visible,
 .account__name:focus-visible {
   outline: 3px solid var(--accent);
@@ -533,16 +546,6 @@ main {
 
 /* ---------- Leaderboard ---------- */
 
-.leaderboard {
-  margin-top: 48px;
-}
-
-.leaderboard__title {
-  margin: 0 0 16px;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 .leaderboard__tabs {
   display: flex;
   flex-wrap: wrap;
@@ -622,13 +625,6 @@ main {
   margin: 0;
   padding: 24px 16px;
   color: var(--muted);
-  text-align: center;
-}
-
-.leaderboard__note {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 0.85rem;
   text-align: center;
 }
 
