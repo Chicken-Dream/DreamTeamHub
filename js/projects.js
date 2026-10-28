@@ -57,4 +57,11 @@ window.PROJECTS = [
     subdomain: "blobsoccer",
     image: "images/projects/blobsoccer.png",
   },
+  {
+    title: "Mine Duel",
+    description: "choose wisely",
+    subdomain: "mineduel",
+    image: "images/projects/mineduel.jpg",
+    author: "Jordan",
+  },
 ];
