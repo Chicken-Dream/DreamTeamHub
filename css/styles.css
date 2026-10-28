@@ -48,8 +48,151 @@ main {
 }
 
 .site-header {
+  position: relative;
   text-align: center;
   padding: 56px 16px 32px;
+}
+
+/* ---------- Account (sign-in, top right) ---------- */
+
+.account {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  text-align: left;
+}
+
+.account__signin,
+.account__name {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.account__signin:hover,
+.account__name:hover,
+.account__name[aria-expanded="true"] {
+  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.5), var(--shadow);
+}
+
+.account__signin:focus-visible,
+.account__name:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.account__name::after {
+  content: " \25BE";
+  color: var(--muted);
+}
+
+.account__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: min(280px, calc(100vw - 32px));
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-hover);
+}
+
+.account__panel[hidden] {
+  display: none;
+}
+
+.account__label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.account__current {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.account__rename {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.account__rename select {
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid var(--muted);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.account__save,
+.account__signout {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.account__save {
+  grid-column: 1 / -1;
+  background: #84cc16;
+  color: #1c1e26;
+}
+
+.account__save:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.account__status {
+  grid-column: 1 / -1;
+  margin: 0;
+  min-height: 1.2em;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.account__logout {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--bg);
+}
+
+.account__signout {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.account__privacy {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Small screens: keep the button clear of the centered title. */
+@media (max-width: 520px) {
+  .site-header {
+    padding-top: 64px;
+  }
 }
 
 .site-header h1 {
@@ -382,4 +525,50 @@ main {
   padding: 24px 16px;
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+/* ---------- Text pages (privacy) ---------- */
+
+.prose {
+  max-width: 680px;
+}
+
+.prose h2 {
+  margin: 32px 0 8px;
+  font-size: 1.25rem;
+}
+
+.prose a,
+.tagline a {
+  color: var(--accent);
+}
+
+.prose code {
+  font-size: 0.9em;
+}
+
+.danger-button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #dc2626;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.danger-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.notice {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(132, 204, 22, 0.18);
 }

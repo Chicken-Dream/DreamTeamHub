@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy ~ Dream Team Hub</title>
+  <meta name="description" content="What Dream Team Hub stores when you sign in, and how to delete it.">
+  <link rel="canonical" href="https://dreamteamhub.ca/privacy.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Privacy</h1>
+    <p class="tagline"><a href="/">Back to Dream Team Hub</a></p>
+  </header>
+
+  <main class="prose">
+    <p>Last updated: October 28, 2026</p>
+
+    <h2>Signing in is optional</h2>
+    <p>Every game on dreamteamhub.ca can be played as a guest. Signing in with Google only matters
+      for leaderboards.</p>
+
+    <h2>What we store when you sign in</h2>
+    <ul>
+      <li><strong>A Google account ID.</strong> Google gives us a random number that identifies your
+        account to us. We don't ask for, receive or store your email address, real name or photo.</li>
+      <li><strong>Your display name</strong>, like "LuckyOtter". It starts random and you can change it
+        from the menu at the top of the home page. Other players can see it.</li>
+      <li><strong>A login cookie</strong> called <code>dth_session</code>, set on dreamteamhub.ca so every
+        game knows you're signed in. It lasts 60 days or until you sign out. We only keep a scrambled
+        (hashed) copy of it.</li>
+      <li><strong>Game results</strong> (wins, rankings and similar) once leaderboards are added, linked
+        to your account.</li>
+    </ul>
+    <p>We don't sell or share this information. It's stored with Cloudflare, which runs our account
+      service.</p>
+
+    <h2>Ads and other services</h2>
+    <p>The home page shows ads from Google AdSense, which may use its own cookies. See
+      <a href="https://policies.google.com/technologies/ads">how Google uses information from sites
+      that use its services</a>. The "Support us" button links to Ko-fi, which has its own privacy
+      policy.</p>
+
+    <h2>Delete your account</h2>
+    <p>This permanently deletes your account, display name, results and every login session. You can
+      sign in again later, but you'll start over as a new player.</p>
+    <form id="delete-account" class="danger-form" method="post" action="https://account.dreamteamhub.ca/me/delete">
+      <button type="submit" class="danger-button">Delete my account</button>
+    </form>
+    <p id="deleted" class="notice" hidden>Your account has been deleted.</p>
+
+    <h2>Questions</h2>
+    <p>Message us through our <a href="https://ko-fi.com/abtea">Ko-fi page</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Dream Team Hub</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Come back here afterwards, with a note that it worked.
+    var form = document.getElementById("delete-account");
+    var back = location.origin + location.pathname + "?deleted=1";
+    form.action += "?return=" + encodeURIComponent(back);
+    form.addEventListener("submit", function (event) {
+      if (!confirm("Delete your Dream Team Hub account? This can't be undone.")) event.preventDefault();
+    });
+    if (new URLSearchParams(location.search).has("deleted")) {
+      document.getElementById("deleted").hidden = false;
+    }
+  </script>
+</body>
+</html>
