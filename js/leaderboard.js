@@ -12,6 +12,7 @@
 
   var LEADERBOARDS = [
     { game: "mineduel", title: "Mine Duel" },
+    { game: "flappyduel", title: "Flappy Duel" },
   ];
 
   var API = window.DTH_ACCOUNT_API || "https://account.dreamteamhub.ca";
